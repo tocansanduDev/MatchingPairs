@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MatchingPairsApp: App {
+    private let requestManager: RequestManagerProtocol = RequestManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Root.ContentView()
+                .environmentObject(Root.ViewModel(requestManager: requestManager))
         }
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F2D32ADD2A99061A004E3EB0 /* MatchingPairsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32ADC2A99061A004E3EB0 /* MatchingPairsApp.swift */; };
-		F2D32ADF2A99061A004E3EB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32ADE2A99061A004E3EB0 /* ContentView.swift */; };
+		F2D32ADF2A99061A004E3EB0 /* RootContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32ADE2A99061A004E3EB0 /* RootContentView.swift */; };
 		F2D32AE12A99061C004E3EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2D32AE02A99061C004E3EB0 /* Assets.xcassets */; };
 		F2D32AE42A99061C004E3EB0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2D32AE32A99061C004E3EB0 /* Preview Assets.xcassets */; };
 		F2D32AEE2A99EF0A004E3EB0 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32AED2A99EF0A004E3EB0 /* RequestManager.swift */; };
@@ -20,12 +20,21 @@
 		F2D32AFF2A99F385004E3EB0 /* ThemesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32AFE2A99F385004E3EB0 /* ThemesRequest.swift */; };
 		F2D32B022A99FCC7004E3EB0 /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B012A99FCC7004E3EB0 /* ResponseValidator.swift */; };
 		F2D32B062A9A008F004E3EB0 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B052A9A008F004E3EB0 /* Theme.swift */; };
+		F2D32B082A9A04BA004E3EB0 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B072A9A04BA004E3EB0 /* Card.swift */; };
+		F2D32B0A2A9A0713004E3EB0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B092A9A0713004E3EB0 /* ViewModel.swift */; };
+		F2D32B0F2A9A08AB004E3EB0 /* GameContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B0E2A9A08AB004E3EB0 /* GameContentView.swift */; };
+		F2D32B122A9A1422004E3EB0 /* GameVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B112A9A1422004E3EB0 /* GameVIewModel.swift */; };
+		F2D32B142A9A2182004E3EB0 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B132A9A2182004E3EB0 /* Mock.swift */; };
+		F2D32B182A9A2885004E3EB0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B172A9A2885004E3EB0 /* CardView.swift */; };
+		F2D32B1B2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B1A2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift */; };
+		F2D32B1D2A9A42B7004E3EB0 /* Array + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */; };
+		F2D32B1F2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F2D32AD92A99061A004E3EB0 /* MatchingPairs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchingPairs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D32ADC2A99061A004E3EB0 /* MatchingPairsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingPairsApp.swift; sourceTree = "<group>"; };
-		F2D32ADE2A99061A004E3EB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2D32ADE2A99061A004E3EB0 /* RootContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContentView.swift; sourceTree = "<group>"; };
 		F2D32AE02A99061C004E3EB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2D32AE32A99061C004E3EB0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2D32AED2A99EF0A004E3EB0 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -37,6 +46,15 @@
 		F2D32AFE2A99F385004E3EB0 /* ThemesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesRequest.swift; sourceTree = "<group>"; };
 		F2D32B012A99FCC7004E3EB0 /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
 		F2D32B052A9A008F004E3EB0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		F2D32B072A9A04BA004E3EB0 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F2D32B092A9A0713004E3EB0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F2D32B0E2A9A08AB004E3EB0 /* GameContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentView.swift; sourceTree = "<group>"; };
+		F2D32B112A9A1422004E3EB0 /* GameVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVIewModel.swift; sourceTree = "<group>"; };
+		F2D32B132A9A2182004E3EB0 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		F2D32B172A9A2885004E3EB0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F2D32B1A2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue + Utils.swift"; sourceTree = "<group>"; };
+		F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Utils.swift"; sourceTree = "<group>"; };
+		F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +87,12 @@
 		F2D32ADB2A99061A004E3EB0 /* MatchingPairs */ = {
 			isa = PBXGroup;
 			children = (
+				F2D32B192A9A428C004E3EB0 /* core */,
+				F2D32B0B2A9A0873004E3EB0 /* game */,
 				F2D32B042A9A007E004E3EB0 /* model */,
 				F2D32AEC2A99EEE6004E3EB0 /* network */,
 				F2D32ADC2A99061A004E3EB0 /* MatchingPairsApp.swift */,
-				F2D32ADE2A99061A004E3EB0 /* ContentView.swift */,
+				F2D32B102A9A0962004E3EB0 /* root */,
 				F2D32AE02A99061C004E3EB0 /* Assets.xcassets */,
 				F2D32AE22A99061C004E3EB0 /* Preview Content */,
 			);
@@ -146,8 +166,39 @@
 			isa = PBXGroup;
 			children = (
 				F2D32B052A9A008F004E3EB0 /* Theme.swift */,
+				F2D32B072A9A04BA004E3EB0 /* Card.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		F2D32B0B2A9A0873004E3EB0 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				F2D32B0E2A9A08AB004E3EB0 /* GameContentView.swift */,
+				F2D32B112A9A1422004E3EB0 /* GameVIewModel.swift */,
+				F2D32B132A9A2182004E3EB0 /* Mock.swift */,
+				F2D32B172A9A2885004E3EB0 /* CardView.swift */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
+		F2D32B102A9A0962004E3EB0 /* root */ = {
+			isa = PBXGroup;
+			children = (
+				F2D32ADE2A99061A004E3EB0 /* RootContentView.swift */,
+				F2D32B092A9A0713004E3EB0 /* ViewModel.swift */,
+			);
+			path = root;
+			sourceTree = "<group>";
+		};
+		F2D32B192A9A428C004E3EB0 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				F2D32B1A2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift */,
+				F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */,
+				F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */,
+			);
+			path = core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,17 +271,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2D32ADF2A99061A004E3EB0 /* ContentView.swift in Sources */,
+				F2D32ADF2A99061A004E3EB0 /* RootContentView.swift in Sources */,
 				F2D32AFF2A99F385004E3EB0 /* ThemesRequest.swift in Sources */,
 				F2D32B022A99FCC7004E3EB0 /* ResponseValidator.swift in Sources */,
 				F2D32AFC2A99F212004E3EB0 /* NetorkError.swift in Sources */,
 				F2D32AF82A99F028004E3EB0 /* APIConstants.swift in Sources */,
+				F2D32B1D2A9A42B7004E3EB0 /* Array + Utils.swift in Sources */,
+				F2D32B122A9A1422004E3EB0 /* GameVIewModel.swift in Sources */,
+				F2D32B082A9A04BA004E3EB0 /* Card.swift in Sources */,
+				F2D32B0F2A9A08AB004E3EB0 /* GameContentView.swift in Sources */,
+				F2D32B0A2A9A0713004E3EB0 /* ViewModel.swift in Sources */,
+				F2D32B1B2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift in Sources */,
 				F2D32AF32A99EF5A004E3EB0 /* DataParser.swift in Sources */,
 				F2D32AF62A99EFD1004E3EB0 /* RequestProtocol.swift in Sources */,
 				F2D32ADD2A99061A004E3EB0 /* MatchingPairsApp.swift in Sources */,
+				F2D32B1F2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift in Sources */,
 				F2D32B062A9A008F004E3EB0 /* Theme.swift in Sources */,
 				F2D32AFA2A99F1B3004E3EB0 /* APIManger.swift in Sources */,
 				F2D32AEE2A99EF0A004E3EB0 /* RequestManager.swift in Sources */,
+				F2D32B182A9A2885004E3EB0 /* CardView.swift in Sources */,
+				F2D32B142A9A2182004E3EB0 /* Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
