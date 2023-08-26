@@ -29,6 +29,7 @@
 		F2D32B1B2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B1A2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift */; };
 		F2D32B1D2A9A42B7004E3EB0 /* Array + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */; };
 		F2D32B1F2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */; };
+		F2D32B232A9A4F63004E3EB0 /* OrientationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B222A9A4F63004E3EB0 /* OrientationInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		F2D32B1A2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue + Utils.swift"; sourceTree = "<group>"; };
 		F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Utils.swift"; sourceTree = "<group>"; };
 		F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
+		F2D32B222A9A4F63004E3EB0 /* OrientationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				F2D32B1A2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift */,
 				F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */,
 				F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */,
+				F2D32B222A9A4F63004E3EB0 /* OrientationInfo.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				F2D32B022A99FCC7004E3EB0 /* ResponseValidator.swift in Sources */,
 				F2D32AFC2A99F212004E3EB0 /* NetorkError.swift in Sources */,
 				F2D32AF82A99F028004E3EB0 /* APIConstants.swift in Sources */,
+				F2D32B232A9A4F63004E3EB0 /* OrientationInfo.swift in Sources */,
 				F2D32B1D2A9A42B7004E3EB0 /* Array + Utils.swift in Sources */,
 				F2D32B122A9A1422004E3EB0 /* GameVIewModel.swift in Sources */,
 				F2D32B082A9A04BA004E3EB0 /* Card.swift in Sources */,

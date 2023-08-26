@@ -15,6 +15,7 @@ struct MatchingPairsApp: App {
         WindowGroup {
             Root.ContentView()
                 .environmentObject(Root.ViewModel(requestManager: requestManager))
+                .environmentObject(OrientationInfo())
         }
     }
 }

@@ -13,15 +13,23 @@ extension Game {
         
         @Published var cards: [Card] = []
         @Published var isEvaluating: Bool = false
+        @Published var score: Int = 0
+        @Published var congratulationMessage: String? = nil
         
         private let theme: Theme
         
-        init(theme: Theme) {
-            self.theme = theme
-            setup()
+        var themeTitle: String {
+            theme.title
         }
         
-        func setup() {
+        init(theme: Theme) {
+            self.theme = theme
+            reset()
+        }
+        
+        func reset() {
+            score = 0
+            congratulationMessage = nil
             var dublicatedSymbols: [String] = []
             for _ in 0...1 {
                 dublicatedSymbols.append(contentsOf: theme.symbols)
@@ -35,19 +43,40 @@ extension Game {
             let flippedCards = cards.filter({ $0.isFlipped })
             guard flippedCards.count == 2 else { return }
             isEvaluating = true
-            DispatchQueue.main.after(seconds: 0.7) {
+            DispatchQueue.main.after(seconds: 0.5) {
                 if flippedCards[0].faceSymbol == flippedCards[1].faceSymbol {
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        self.cards.removeAll { $0.isFlipped }
-                    }
+                    self.onSuccess()
                 } else {
-                    withAnimation(.spring(response: 0.2, dampingFraction: 0.6)) {
-                        self.cards.modifyForEach { $1.isFlipped = false }
-                    }
+                    self.onFailure()
+                }
+                if self.cards.isEmpty {
+                    self.congratulate()
                 }
                 self.isEvaluating = false
             }
         }
+        
+        private func onSuccess() {
+            self.score += 2
+            withAnimation(.easeInOut(duration: 0.2)) {
+                self.cards.removeAll { $0.isFlipped }
+            }
+        }
+        
+        private func onFailure() {
+            withAnimation(.spring(response: 0.2, dampingFraction: 0.6)) {
+                self.cards.modifyForEach { $1.isFlipped = false }
+            }
+        }
+        
+        private func congratulate() {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
+            withAnimation(.spring(response: 0.4, dampingFraction: 0.9)) {
+                self.congratulationMessage = "You won!"
+            }
+        }
+        
     }
     
 }

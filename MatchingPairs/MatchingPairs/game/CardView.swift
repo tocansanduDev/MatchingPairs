@@ -16,7 +16,7 @@ struct CardView: View {
         card.color
             .overlay(content: overlay)
             .cornerRadius(10)
-            .frame(height: 140)
+            .frame(height: 120)
             .rotation3DEffect(angle, axis: (x: 0, y: 1, z: 0))
             .onTapGesture(perform: action)
     }
