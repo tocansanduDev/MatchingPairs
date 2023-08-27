@@ -17,10 +17,11 @@ struct Game {
             VStack(spacing: 0) {
                 if orientationInfo.orientation == .portrait {
                     scoreView
+                        .padding(.bottom)
                 }
                 Group {
-                    if let message = viewModel.congratulationMessage {
-                        congratulationMessageView(of: message)
+                    if let completion = viewModel.completionState {
+                        congratulationMessageView(of: completion.message)
                     } else {
                         gridView
                     }
@@ -31,6 +32,8 @@ struct Game {
                     if orientationInfo.orientation == .landscape {
                         timerView
                             .padding(.leading)
+                        Spacer()
+                            .frame(maxWidth: 60)
                     }
                     resetButton
                         .frame(maxWidth: .infinity)
@@ -53,6 +56,7 @@ struct Game {
                 .fontWeight(.bold)
                 .padding(.horizontal)
                 .monospacedDigit()
+                .frame(maxWidth: 200)
         }
         
         private func congratulationMessageView(of message: String) -> some View {
@@ -77,14 +81,17 @@ struct Game {
                     .foregroundColor(.red)
                     .padding(EdgeInsets(top: 6, leading: 56, bottom: 6, trailing: 56))
             }
-            
             .buttonStyle(.bordered)
         }
         
+        @ViewBuilder
         private var timerView: some View {
-            TimerView(seconds: 10, onRestartPublisher: viewModel.onRestartTimer) {
-             print("Done")
-            }
+            TimerView(
+                seconds: viewModel.seconds,
+                onRestartPublisher: viewModel.onRestartTimer,
+                onFinishedInteraction: viewModel.onGameOver
+            )
+            .opacity(viewModel.completionState == nil ? 1 : 0)
             .frame(maxWidth: 140)
             .padding(.vertical)
         }

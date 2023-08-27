@@ -10,38 +10,60 @@ import SwiftUI
 import Combine
 
 extension Game {
+    
     final class ViewModel: ObservableObject {
+        
         @Published var cards: [Card] = []
         @Published var isEvaluating: Bool = false
-        @Published var congratulationMessage: String? = nil
+        @Published var completionState: GameCompletion? = nil
         @Published var score: Int = 0
-//        @Published(key: "totalScore") var totalScore: Int = 0
+        
+        @UserDefault(key: "total_score", defaultValue: 0)
+        var totalScore: Int
+        
         let onRestartTimer = PassthroughSubject<Void, Never>()
         private let theme: Theme
+        private let difficultyLevel: DifficultyLevel
+        private var flipCounter: Int = 0
         
         var themeTitle: String {
             theme.title
         }
         
-        init(theme: Theme) {
+        var seconds: Int {
+            difficultyLevel.seconds
+        }
+        
+        var computedScore: Int {
+            difficultyLevel.score + flipCounter
+        }
+        
+        init(theme: Theme, difficultyLevel: DifficultyLevel) {
             self.theme = theme
+            self.difficultyLevel = difficultyLevel
             reset()
         }
         
         func reset() {
             onRestartTimer.send()
             score = 0
-            congratulationMessage = nil
+            flipCounter = 0
+            completionState = nil
             var dublicatedSymbols: [String] = []
+            let symbols = theme.symbols.prefix(difficultyLevel.cards)
             for _ in 0...1 {
-                dublicatedSymbols.append(contentsOf: theme.symbols)
+                dublicatedSymbols.append(contentsOf: symbols)
             }
             self.cards = dublicatedSymbols.map {
                 Card(symbol: theme.cardSymbol, faceSymbol: $0, color: theme.color)
             }.shuffled()
+            flipCounter = cards.count
         }
         
         func evaluate() {
+            if flipCounter >= 0 {
+                flipCounter -= 1
+            }
             let flippedCards = cards.filter({ $0.isFlipped })
             guard flippedCards.count == 2 else { return }
             isEvaluating = true
@@ -58,8 +80,12 @@ extension Game {
             }
         }
         
+        func onGameOver() {
+            setupCompletion(of: .over)
+        }
+        
         private func onSuccess() {
-            self.score += 2
+            self.score += computedScore
             withAnimation(.easeInOut(duration: 0.2)) {
                 self.cards.removeAll { $0.isFlipped }
             }
@@ -74,11 +100,17 @@ extension Game {
         private func congratulate() {
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.success)
+            setupCompletion(of: .won)
+            totalScore += score
+        }
+        
+        private func setupCompletion(of state: GameCompletion) {
             withAnimation(.spring(response: 0.4, dampingFraction: 0.9)) {
-                self.congratulationMessage = "You won!"
+                self.completionState = state
             }
         }
         
     }
     
 }
+

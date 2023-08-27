@@ -15,6 +15,6 @@ extension Game.ViewModel {
             cardSymbol: "🎈",
             cardColor: CardColor(blue: 0.549, green: 0.8667, red: 0.949)
         )
-        return Game.ViewModel(theme: theme)
+        return Game.ViewModel(theme: theme, difficultyLevel: .easy)
     }
 }
