@@ -39,7 +39,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        StatefulPreviewWrapper(Card(symbol: "🎈", faceSymbol: "🟡", color: .gray)) { card in
+        StatefulPreviewWrapper(Card(symbol: "🎈", faceSymbol: "🟡", color: .green)) { card in
             CardView(card: card, onDidFinishInteraction: {})
                 .frame(width: 100, height: 125)
         }

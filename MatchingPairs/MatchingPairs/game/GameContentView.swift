@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MatchingPairsPackage
 
 struct Game {
     struct ContentView: View {
@@ -28,8 +29,8 @@ struct Game {
                 .padding(.bottom)
                 HStack {
                     if orientationInfo.orientation == .landscape {
-                        scoreView
-                            .opacity(0)
+                        timerView
+                            .padding(.leading)
                     }
                     resetButton
                         .frame(maxWidth: .infinity)
@@ -38,6 +39,9 @@ struct Game {
                     }
                 }
                 .padding(.horizontal)
+                if orientationInfo.orientation == .portrait {
+                    timerView
+                }
             }
             .padding(.vertical)
             .navigationTitle(viewModel.themeTitle)
@@ -75,6 +79,14 @@ struct Game {
             }
             
             .buttonStyle(.bordered)
+        }
+        
+        private var timerView: some View {
+            TimerView(seconds: 10, onRestartPublisher: viewModel.onRestartTimer) {
+             print("Done")
+            }
+            .frame(maxWidth: 140)
+            .padding(.vertical)
         }
     }
 }

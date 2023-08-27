@@ -7,15 +7,16 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 extension Game {
     final class ViewModel: ObservableObject {
-        
         @Published var cards: [Card] = []
         @Published var isEvaluating: Bool = false
-        @Published var score: Int = 0
         @Published var congratulationMessage: String? = nil
-        
+        @Published var score: Int = 0
+//        @Published(key: "totalScore") var totalScore: Int = 0
+        let onRestartTimer = PassthroughSubject<Void, Never>()
         private let theme: Theme
         
         var themeTitle: String {
@@ -28,6 +29,7 @@ extension Game {
         }
         
         func reset() {
+            onRestartTimer.send()
             score = 0
             congratulationMessage = nil
             var dublicatedSymbols: [String] = []

@@ -30,6 +30,8 @@
 		F2D32B1D2A9A42B7004E3EB0 /* Array + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */; };
 		F2D32B1F2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */; };
 		F2D32B232A9A4F63004E3EB0 /* OrientationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B222A9A4F63004E3EB0 /* OrientationInfo.swift */; };
+		F2D32B252A9A5AAD004E3EB0 /* Published + utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32B242A9A5AAD004E3EB0 /* Published + utils.swift */; };
+		F2D32B4C2A9B7D70004E3EB0 /* MatchingPairsPackage in Frameworks */ = {isa = PBXBuildFile; productRef = F2D32B4B2A9B7D70004E3EB0 /* MatchingPairsPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,7 @@
 		F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Utils.swift"; sourceTree = "<group>"; };
 		F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 		F2D32B222A9A4F63004E3EB0 /* OrientationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationInfo.swift; sourceTree = "<group>"; };
+		F2D32B242A9A5AAD004E3EB0 /* Published + utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published + utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D32B4C2A9B7D70004E3EB0 /* MatchingPairsPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +204,7 @@
 				F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */,
 				F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */,
 				F2D32B222A9A4F63004E3EB0 /* OrientationInfo.swift */,
+				F2D32B242A9A5AAD004E3EB0 /* Published + utils.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -220,6 +225,9 @@
 			dependencies = (
 			);
 			name = MatchingPairs;
+			packageProductDependencies = (
+				F2D32B4B2A9B7D70004E3EB0 /* MatchingPairsPackage */,
+			);
 			productName = MatchingPairs;
 			productReference = F2D32AD92A99061A004E3EB0 /* MatchingPairs.app */;
 			productType = "com.apple.product-type.application";
@@ -248,6 +256,9 @@
 				Base,
 			);
 			mainGroup = F2D32AD02A99061A004E3EB0;
+			packageReferences = (
+				F2D32B4A2A9B7D70004E3EB0 /* XCRemoteSwiftPackageReference "MatchingPairsPackage" */,
+			);
 			productRefGroup = F2D32ADA2A99061A004E3EB0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -288,6 +299,7 @@
 				F2D32B1B2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift in Sources */,
 				F2D32AF32A99EF5A004E3EB0 /* DataParser.swift in Sources */,
 				F2D32AF62A99EFD1004E3EB0 /* RequestProtocol.swift in Sources */,
+				F2D32B252A9A5AAD004E3EB0 /* Published + utils.swift in Sources */,
 				F2D32ADD2A99061A004E3EB0 /* MatchingPairsApp.swift in Sources */,
 				F2D32B1F2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift in Sources */,
 				F2D32B062A9A008F004E3EB0 /* Theme.swift in Sources */,
@@ -438,6 +450,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = TestMode.MatchingPairs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,6 +482,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = TestMode.MatchingPairs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -495,6 +513,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2D32B4A2A9B7D70004E3EB0 /* XCRemoteSwiftPackageReference "MatchingPairsPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tocansanduDev/MatchingPairsPackage?search=1";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2D32B4B2A9B7D70004E3EB0 /* MatchingPairsPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2D32B4A2A9B7D70004E3EB0 /* XCRemoteSwiftPackageReference "MatchingPairsPackage" */;
+			productName = MatchingPairsPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2D32AD12A99061A004E3EB0 /* Project object */;
 }
