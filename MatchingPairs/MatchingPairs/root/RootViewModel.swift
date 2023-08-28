@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+protocol ThemesFetcher {
+    func fetchThemes() async throws -> [Theme]
+}
+
 extension Root {
     final class ViewModel: ObservableObject {
         
@@ -16,13 +20,12 @@ extension Root {
         @Published var errorMessage: String? = nil
         @Published var isLoading: Bool = false
         @Published var totalScore: Int = 0
-
+        
         private var themes: [Theme] = []
+        private let themesFetcher: ThemesFetcher
         
-        private let requestManager: RequestManagerProtocol
-        
-        init(requestManager: RequestManagerProtocol) {
-            self.requestManager = requestManager
+        init(themesFetcher: ThemesFetcher) {
+            self.themesFetcher = themesFetcher
             self.fetch()
         }
         
@@ -31,7 +34,7 @@ extension Root {
             isLoading = true
             Task { @MainActor in
                 do {
-                    themes = try await requestManager.perform(ThemesRequest.getThemes)
+                    themes = try await themesFetcher.fetchThemes()
                     themeNames = themes.map { $0.title }
                     isLoading = false
                 } catch {
@@ -52,5 +55,5 @@ extension Root {
         }
         
     }
-
+    
 }

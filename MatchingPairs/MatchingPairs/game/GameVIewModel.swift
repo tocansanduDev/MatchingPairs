@@ -35,7 +35,7 @@ extension Game {
         }
         
         var computedScore: Int {
-            difficultyLevel.score + flipCounter
+            difficultyLevel.score + (flipCounter * 4)
         }
         
         init(theme: Theme, difficultyLevel: DifficultyLevel) {
@@ -47,7 +47,6 @@ extension Game {
         func reset() {
             onRestartTimer.send()
             score = 0
-            flipCounter = 0
             completionState = nil
             var dublicatedSymbols: [String] = []
             let symbols = theme.symbols.prefix(difficultyLevel.cards)
@@ -57,11 +56,11 @@ extension Game {
             self.cards = dublicatedSymbols.map {
                 Card(symbol: theme.cardSymbol, faceSymbol: $0, color: theme.color)
             }.shuffled()
-            flipCounter = cards.count
+            flipCounter = cards.count * 2
         }
         
         func evaluate() {
-            if flipCounter >= 0 {
+            if flipCounter > 0 {
                 flipCounter -= 1
             }
             let flippedCards = cards.filter({ $0.isFlipped })

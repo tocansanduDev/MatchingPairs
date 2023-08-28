@@ -84,6 +84,6 @@ struct Root {
 struct Root_ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Root.ContentView()
-            .environmentObject(Root.ViewModel(requestManager: RequestManager()))
+            .environmentObject(Root.ViewModel(themesFetcher: MockFetchThemesService()))
     }
 }

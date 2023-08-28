@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2CD8ED52A9C706900A6AA74 /* FetchThemesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD8ED42A9C706900A6AA74 /* FetchThemesService.swift */; };
 		F2D32ADD2A99061A004E3EB0 /* MatchingPairsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32ADC2A99061A004E3EB0 /* MatchingPairsApp.swift */; };
 		F2D32ADF2A99061A004E3EB0 /* RootContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D32ADE2A99061A004E3EB0 /* RootContentView.swift */; };
 		F2D32AE12A99061C004E3EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2D32AE02A99061C004E3EB0 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F2CD8ED42A9C706900A6AA74 /* FetchThemesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchThemesService.swift; sourceTree = "<group>"; };
 		F2D32AD92A99061A004E3EB0 /* MatchingPairs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchingPairs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D32ADC2A99061A004E3EB0 /* MatchingPairsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingPairsApp.swift; sourceTree = "<group>"; };
 		F2D32ADE2A99061A004E3EB0 /* RootContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2CD8ED22A9C6FD400A6AA74 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */,
+				F2D32B222A9A4F63004E3EB0 /* OrientationInfo.swift */,
+				F2D32B552A9B9C32004E3EB0 /* UserDefaults + utils.swift */,
+				F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */,
+				F2D32B1A2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		F2CD8ED32A9C705200A6AA74 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				F2CD8ED42A9C706900A6AA74 /* FetchThemesService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		F2D32AD02A99061A004E3EB0 = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +122,6 @@
 				F2D32B192A9A428C004E3EB0 /* core */,
 				F2D32B0B2A9A0873004E3EB0 /* game */,
 				F2D32B042A9A007E004E3EB0 /* model */,
-				F2D32AEC2A99EEE6004E3EB0 /* network */,
 				F2D32ADC2A99061A004E3EB0 /* MatchingPairsApp.swift */,
 				F2D32B102A9A0962004E3EB0 /* root */,
 				F2D32AE02A99061C004E3EB0 /* Assets.xcassets */,
@@ -196,6 +217,7 @@
 		F2D32B102A9A0962004E3EB0 /* root */ = {
 			isa = PBXGroup;
 			children = (
+				F2CD8ED32A9C705200A6AA74 /* services */,
 				F2D32ADE2A99061A004E3EB0 /* RootContentView.swift */,
 				F2D32B092A9A0713004E3EB0 /* RootViewModel.swift */,
 			);
@@ -205,12 +227,9 @@
 		F2D32B192A9A428C004E3EB0 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				F2D32B1A2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift */,
-				F2D32B1C2A9A42B7004E3EB0 /* Array + Utils.swift */,
-				F2D32B1E2A9A437B004E3EB0 /* StatefulPreviewWrapper.swift */,
-				F2D32B222A9A4F63004E3EB0 /* OrientationInfo.swift */,
+				F2D32AEC2A99EEE6004E3EB0 /* network */,
+				F2CD8ED22A9C6FD400A6AA74 /* utils */,
 				F2D32B4F2A9B8AB0004E3EB0 /* DifficultyLevel.swift */,
-				F2D32B552A9B9C32004E3EB0 /* UserDefaults + utils.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -321,6 +340,7 @@
 				F2D32B0F2A9A08AB004E3EB0 /* GameContentView.swift in Sources */,
 				F2D32B0A2A9A0713004E3EB0 /* RootViewModel.swift in Sources */,
 				F2D32B1B2A9A42A1004E3EB0 /* DispatchQueue + Utils.swift in Sources */,
+				F2CD8ED52A9C706900A6AA74 /* FetchThemesService.swift in Sources */,
 				F2D32AF32A99EF5A004E3EB0 /* DataParser.swift in Sources */,
 				F2D32AF62A99EFD1004E3EB0 /* RequestProtocol.swift in Sources */,
 				F2D32ADD2A99061A004E3EB0 /* MatchingPairsApp.swift in Sources */,
