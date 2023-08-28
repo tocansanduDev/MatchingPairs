@@ -80,6 +80,7 @@ extension Game {
         }
         
         func onGameOver() {
+            if cards.isEmpty { return }
             setupCompletion(of: .over)
         }
         
