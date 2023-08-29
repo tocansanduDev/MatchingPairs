@@ -49,6 +49,7 @@ struct Game {
             }
             .padding(.vertical)
             .navigationTitle(viewModel.themeTitle)
+            .onAppear(perform: viewModel.reset)
         }
         
         private var scoreView: some View {
@@ -85,17 +86,11 @@ struct Game {
             .buttonStyle(.bordered)
         }
         
-        @ViewBuilder
         private var timerView: some View {
-            TimerView(
-                seconds: viewModel.seconds,
-                onRestartPublisher: viewModel.onRestartTimer,
-                onFinishedInteraction: viewModel.onGameOver,
-                colorScheme: colorScheme
-            )
-            .opacity(viewModel.completionState == nil ? 1 : 0)
-            .frame(maxWidth: 140)
-            .padding(.vertical)
+            InLineProgressView(progress: viewModel.progress, colorScheme: colorScheme)
+                .opacity(viewModel.completionState == nil ? 1 : 0)
+                .frame(maxWidth: 140)
+                .padding(.vertical)
         }
     }
 }

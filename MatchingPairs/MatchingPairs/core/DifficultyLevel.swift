@@ -14,7 +14,7 @@ enum DifficultyLevel: CaseIterable {
     
     var seconds: Int {
         switch self {
-        case .easy: return 40
+        case .easy: return 6
         case .normal: return 30
         case .hard: return 20
         }

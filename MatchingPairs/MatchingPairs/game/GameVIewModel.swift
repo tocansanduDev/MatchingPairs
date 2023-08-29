@@ -17,21 +17,22 @@ extension Game {
         @Published var isEvaluating: Bool = false
         @Published var completionState: GameCompletion? = nil
         @Published var score: Int = 0
+        @Published private(set) var progress: Double = 0
         
         @UserDefault(key: "total_score", defaultValue: 0)
         var totalScore: Int
         
-        let onRestartTimer = PassthroughSubject<Void, Never>()
         private let theme: Theme
         private let difficultyLevel: DifficultyLevel
         private var flipCounter: Int = 0
+        private var stopwatchTimer: Timer?
         
         var themeTitle: String {
             theme.title
         }
         
-        var seconds: Int {
-            difficultyLevel.seconds
+        var seconds: Double {
+            Double(difficultyLevel.seconds)
         }
         
         var computedScore: Int {
@@ -41,11 +42,10 @@ extension Game {
         init(theme: Theme, difficultyLevel: DifficultyLevel) {
             self.theme = theme
             self.difficultyLevel = difficultyLevel
-            reset()
         }
         
         func reset() {
-            onRestartTimer.send()
+            startTimer()
             score = 0
             completionState = nil
             var dublicatedSymbols: [String] = []
@@ -72,16 +72,42 @@ extension Game {
                 } else {
                     self.onFailure()
                 }
-                if self.cards.isEmpty {
+                if self.cards.isEmpty && self.completionState != .over {
                     self.congratulate()
                 }
                 self.isEvaluating = false
             }
         }
         
-        func onGameOver() {
-            if cards.isEmpty { return }
+        private func handleTimerCompletion() {
+            stopTimer()
+            if cards.isEmpty  { return }
             setupCompletion(of: .over)
+        }
+        
+        private func startTimer() {
+            stopTimer()
+            progress = 1
+            var elapsedTime: Double = seconds
+            let timeInterval: Double = 1
+            stopwatchTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { [weak self] _ in
+                guard let self else { return }
+                if progress > 0 {
+                    elapsedTime -= 1
+                    withAnimation(.linear(duration: timeInterval)) {
+                    self.progress = elapsedTime / self.seconds
+                    }
+                } else {
+                    self.handleTimerCompletion()
+                }
+            })
+        }
+        
+        private func stopTimer() {
+            if let timer = stopwatchTimer {
+                timer.invalidate()
+                stopwatchTimer = nil
+            }
         }
         
         private func onSuccess() {
