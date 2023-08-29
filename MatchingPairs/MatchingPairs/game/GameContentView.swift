@@ -12,6 +12,7 @@ struct Game {
     struct ContentView: View {
         @EnvironmentObject var viewModel: ViewModel
         @EnvironmentObject private var orientationInfo: OrientationInfo
+        @Environment(\.colorScheme) private var colorScheme
         
         var body: some View {
             VStack(spacing: 0) {
@@ -89,7 +90,8 @@ struct Game {
             TimerView(
                 seconds: viewModel.seconds,
                 onRestartPublisher: viewModel.onRestartTimer,
-                onFinishedInteraction: viewModel.onGameOver
+                onFinishedInteraction: viewModel.onGameOver,
+                colorScheme: colorScheme
             )
             .opacity(viewModel.completionState == nil ? 1 : 0)
             .frame(maxWidth: 140)
